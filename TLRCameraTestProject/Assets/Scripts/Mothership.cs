@@ -33,7 +33,10 @@ public class Mothership : MonoBehaviour
             // where end audio goes
             canBoardShip = true;
             MotherShipStory.instance.MSTalk("Outro_AllMissCounted");
-
+            foreach (var rm in FindObjectsOfType<RobotMessaging>())
+            {
+                rm.MotherRobotSpeak("Yayyyy we did it!!!!!");
+            }
         }
         else 
         {
@@ -117,15 +120,24 @@ public class Mothership : MonoBehaviour
                 TryMotherShipEnd();
             }
         }
-        if (canBoardShip)
+        if (other.name.Contains("Player"))
         {
-            Destroy(other.gameObject);
-            robBoardedNum++;
-            if(robBoardedNum == PlayerInputManager.instance.playerCount)
+            if (canBoardShip)
             {
-                MotherShipStory.instance.MSTalk("Outro_Thankyou");
-                Invoke("ToCreditScene", 4.5f);
+                Destroy(other.gameObject);
+                robBoardedNum++;
+                if (robBoardedNum == PlayerInputManager.instance.playerCount)
+                {
+                    MotherShipStory.instance.MSTalk("Outro_Thankyou");
+                    Invoke("ToCreditScene", 4.5f);
+                }
             }
         }
+        
+    }
+
+    private void Update()
+    {
+        gameObject.transform.GetChild(0).gameObject.SetActive(true);
     }
 }

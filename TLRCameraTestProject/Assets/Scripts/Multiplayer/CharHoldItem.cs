@@ -32,6 +32,7 @@ public class CharHoldItem : MonoBehaviour
             if(!got.root.name.Contains("Player"))
             {
                 GetComponent<CharacterMovement>().animator.SetBool("isHold", true);
+                GetComponent<RobotMessaging>().RobotHold(got.gameObject);
 
                 Vector3 oldRot = got.localEulerAngles;
                 got.position = holdSpot.position;
@@ -119,8 +120,11 @@ public class CharHoldItem : MonoBehaviour
     {
         if (ctx.performed)
         {
+            Debug.Log("drop please 1");
+
             if (currentHold != null)
             {
+                Debug.Log("drop please");
                 DropCurrentHeldItem(currentHold);
                 GetComponent<CharacterMovement>().animator.SetBool("isHold", false);
                 currentHold = null;

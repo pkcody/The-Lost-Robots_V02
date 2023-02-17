@@ -50,7 +50,9 @@ public class KnowledgeScriptAbility : MonoBehaviour
             foreach (var tsp in FindObjectsOfType<TutorialScriptPickUp>())
             {
                 tsp.tutorialON = false;
+
             }
+            transform.root.GetComponent<RobotMessaging>().TowerRobotSpeak("Can you hear that static? I think it's trying to say something. Maybe if we make more towers we could clear it up.");
 
             Destroy(gameObject);
         }

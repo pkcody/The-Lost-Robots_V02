@@ -51,7 +51,7 @@ public class TutorialScriptPickUp : MonoBehaviour
         if (collision.GetComponent<Collider>().tag == "TutorialScript")
         {
             ts_pickedUp = false;
-            TutorialScript.SetActive(false);
+            //TutorialScript.SetActive(false);
         }
     }
 

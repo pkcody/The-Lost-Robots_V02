@@ -111,6 +111,7 @@ public class MotherShipStory : MonoBehaviour
         if (SceneManager.GetActiveScene().name == "Game")
         {
             MSTalk("Paint_OhNo");
+            MSTalk("Crash");
         }
         if (SceneManager.GetActiveScene().name == "Quit")
         {

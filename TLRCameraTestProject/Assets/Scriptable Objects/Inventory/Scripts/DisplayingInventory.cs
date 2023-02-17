@@ -311,19 +311,20 @@ public class DisplayingInventory : MonoBehaviour
         }
         else if (io.type == ItemType.AbilityScripts)
         {
-            print("AbilitySc");
+            //print("AbilitySc");
             for (int i = 0; i < 2; i++)
             {
-                print(" for AbilitySc");
+                //print(" for AbilitySc");
 
                 if (AbilitiesCol[i].GetComponent<Image>().sprite.name.Contains("ScriptFiller"))
                 {
-                    print("filler AbilitySc");
+                    //print("filler AbilitySc");
 
                     AbilitiesCol[i].GetComponent<Image>().sprite = io.UIimage;
                     if (io.UIimage.name.Contains("FasterAbility_UI"))
                     {
-                        print("speed AbilitySc");
+                        //print("speed AbilitySc");
+                        GetComponent<RobotMessaging>().RobotSpeakResource(io);
 
                         gameObject.GetComponent<CharacterMovement>().playerSpeed = 10;
                     }

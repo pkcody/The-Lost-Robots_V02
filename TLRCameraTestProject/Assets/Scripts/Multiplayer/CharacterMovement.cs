@@ -285,7 +285,8 @@ public class CharacterMovement : MonoBehaviour
             if (offerItem)
             {
                 print("pick up item");
-                animator.Play("PickUpRobot", 0, 0f);
+                animator.SetTrigger("pickUp");
+
             }
             if (inRangeHold)
             {
@@ -540,7 +541,10 @@ public class CharacterMovement : MonoBehaviour
         {
             //print("taking dmg");
             playerHealth[playerHealthInt].sprite = DmgdHealth;
+            animator.SetTrigger("takeDmg");
+
             playerHealthInt--;
+
         }
         
     }
