@@ -25,6 +25,9 @@ public class DisplayingInventory : MonoBehaviour
     //name
     public TextMeshProUGUI nameOfText;
 
+    public Sprite emptyInv;
+    public Sprite emptyAbility;
+
 
     //public GameObject item_obj;
 
@@ -161,7 +164,8 @@ public class DisplayingInventory : MonoBehaviour
             ItemObject itemToRemove = inventoryObj.Container.ElementAt(containerIndex).item;
             if (itemToRemove.type == ItemType.Resources)
             {
-                MasterList[masterIndex].gameObject.GetComponent<Image>().sprite = Resources.Load<Sprite>("Sprites/Red");
+                //MasterList[masterIndex].gameObject.GetComponent<Image>().sprite = Resources.Load<Sprite>("Sprites/Red");
+                MasterList[masterIndex].gameObject.GetComponent<Image>().sprite = emptyInv;
             }
 
 
@@ -217,21 +221,29 @@ public class DisplayingInventory : MonoBehaviour
             ItemObject itemToRemove = inventoryObj.Container.ElementAt(containerIndex).item;
             if (itemToRemove.type == ItemType.Resources)
             {
-                MasterList[masterIndex].gameObject.GetComponent<Image>().sprite = Resources.Load<Sprite>("Sprites/Red");
+                //MasterList[masterIndex].gameObject.GetComponent<Image>().sprite = Resources.Load<Sprite>("Sprites/Red");
+                MasterList[masterIndex].gameObject.GetComponent<Image>().sprite = emptyInv;
+
             }
             else if (itemToRemove.type == ItemType.BodyParts)
             {
-                MasterList[masterIndex].gameObject.GetComponent<Image>().sprite = Resources.Load<Sprite>("Sprites/Red");
+                //MasterList[masterIndex].gameObject.GetComponent<Image>().sprite = Resources.Load<Sprite>("Sprites/Red");
+                MasterList[masterIndex].gameObject.GetComponent<Image>().sprite = emptyInv;
+
             }
             else if (itemToRemove.type == ItemType.AbilityScripts)
             {
                 gameObject.GetComponent<CharacterMovement>().playerSpeed = 5;
-                MasterList[masterIndex].gameObject.GetComponent<Image>().sprite = Resources.Load<Sprite>("Sprites/ScriptFiller");
+                //MasterList[masterIndex].gameObject.GetComponent<Image>().sprite = Resources.Load<Sprite>("Sprites/ScriptFiller");
+                MasterList[masterIndex].gameObject.GetComponent<Image>().sprite = emptyAbility;
+
             }
             else if (itemToRemove.type == ItemType.BuiltItem)
             {
                 
-                MasterList[masterIndex].gameObject.GetComponent<Image>().sprite = Resources.Load<Sprite>("Sprites/Red");
+                //MasterList[masterIndex].gameObject.GetComponent<Image>().sprite = Resources.Load<Sprite>("Sprites/Red");
+                MasterList[masterIndex].gameObject.GetComponent<Image>().sprite = emptyInv;
+
             }
 
             StartCoroutine(RespawnItemWithDelayedPickup(itemToRemove));

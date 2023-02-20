@@ -5885,9 +5885,9 @@ MonoBehaviour:
   cursorSpeed: 500
   padding: 6
   radius: 10
-  redColor: {r: 1, g: 0, b: 0, a: 1}
-  blueColor: {r: 0, g: 0, b: 1, a: 1}
-  greenColor: {r: 0, g: 1, b: 0, a: 1}
+  redColor: {r: 0.7411765, g: 0.3647059, b: 0, a: 1}
+  blueColor: {r: 0.0627451, g: 0.5411765, b: 0.61960787, a: 1}
+  greenColor: {r: 0.03137255, g: 0.3921569, b: 0.0627451, a: 1}
   currColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &4124210216572618317
 MonoBehaviour:
@@ -5954,6 +5954,8 @@ MonoBehaviour:
   MasterList: []
   masterIndex: 0
   nameOfText: {fileID: 0}
+  emptyInv: {fileID: 21300000, guid: 48a81aa31a69d3c449ce5ac1d136dd62, type: 3}
+  emptyAbility: {fileID: 21300000, guid: b7c7343b447da1e469bac570afb637a3, type: 3}
 --- !u!114 &3273422166264379992
 MonoBehaviour:
   m_ObjectHideFlags: 0

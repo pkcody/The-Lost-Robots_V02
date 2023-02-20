@@ -74,7 +74,9 @@ public class Painting : MonoBehaviour
         else
         {
             //for executable
-            System.IO.File.WriteAllBytes(Application.streamingAssetsPath + "/coloredPng.png", tex.EncodeToPNG());
+            //System.IO.File.WriteAllBytes(Application.streamingAssetsPath + "/coloredPng.png", tex.EncodeToPNG());
+            string filepath = Application.dataPath.Substring(0, Application.dataPath.Length - 23);
+            System.IO.File.WriteAllBytes(filepath + "/coloredPng.png", tex.EncodeToPNG());
         }
 
         print("aply");

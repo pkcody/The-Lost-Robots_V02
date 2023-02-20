@@ -22,6 +22,9 @@ public class EnemyMove : MonoBehaviour
 
     public Animator animator;
 
+    public GameObject mobDrop;
+
+
 
     public int EnemyLives
     {
@@ -98,20 +101,24 @@ public class EnemyMove : MonoBehaviour
 
     void DropItem()
     {
-        string path = "";
-        if (gameObject.name.Contains("Green")) //aka cyclopes green
-        {
-            path = "Res_OBJ/WoodRes_obj";
-        }
-        else if (gameObject.name.Contains("Blue")) // aka glise blue
-        {
-            path = "Res_OBJ/PaperRes";
-        }
-        else if (gameObject.name.Contains("Red")) // still sand red
-        {
-            path = "Res_OBJ/MetalRes_obj";
-        }
-        GameObject drop = Instantiate(Resources.Load(path) as GameObject, transform.parent.position + new Vector3(0f, .5f, 0f), Quaternion.identity, null);
+        //string path = "";
+        //if (gameObject.name.Contains("Green")) //aka cyclopes green
+        //{
+        //    //path = "Res_OBJ/WoodRes_obj";
+        //    GameObject drop = Instantiate(greenDrop, transform.parent.position + new Vector3(0f, .5f, 0f), Quaternion.identity, null);
+        //}
+        //else if (gameObject.name.Contains("Blue")) // aka glise blue
+        //{
+        //    //path = "Res_OBJ/PaperRes";
+        //    GameObject drop = Instantiate(blueDrop, transform.parent.position + new Vector3(0f, .5f, 0f), Quaternion.identity, null);
+        //}
+        //else if (gameObject.name.Contains("Red")) // still sand red
+        //{
+        //    //path = "Res_OBJ/MetalRes_obj";
+        //    GameObject drop = Instantiate(redDrop, transform.parent.position + new Vector3(0f, .5f, 0f), Quaternion.identity, null);
+        //}
+        //GameObject drop = Instantiate(Resources.Load(path) as GameObject, transform.parent.position + new Vector3(0f, .5f, 0f), Quaternion.identity, null);
+        GameObject drop = Instantiate(mobDrop, transform.parent.position + new Vector3(0f, .5f, 0f), Quaternion.identity, null);
     }
 
 

@@ -1422,3 +1422,4 @@ MonoBehaviour:
   damage: 1
   monsterSlider: {fileID: 2603342964404843628}
   animator: {fileID: 3426651395058394690}
+  mobDrop: {fileID: 1812485749236882041, guid: 51ba53adc78ffda4bb353d53b122474d, type: 3}

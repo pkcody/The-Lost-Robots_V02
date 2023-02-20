@@ -14,6 +14,7 @@ public class RobotMessaging : MonoBehaviour
     [SerializeField] private float typingSpeed = 0.04f;
     public string response;
 
+    Coroutine coroutine = null;
 
     void Start()
     {
@@ -34,6 +35,17 @@ public class RobotMessaging : MonoBehaviour
         text.gameObject.SetActive(false);
     }
 
+    public void TryRobotSpeak(string s)
+    {
+        if(coroutine != null)
+        {
+            StopCoroutine(coroutine);
+
+        }
+        coroutine = StartCoroutine(DisplayLine(s));
+
+    }
+
     public void RobotSpeakResource(ItemObject io)
     {
         print(io.UIimage.name);
@@ -41,22 +53,22 @@ public class RobotMessaging : MonoBehaviour
         {
             //print("in");
             response = "So that’s how you reconnect an electric flow.";
-            StartCoroutine(DisplayLine(response));
+            TryRobotSpeak(response);
         }
         if (io.UIimage.name.Contains("TiresTT_UI"))
         {
             response = "Why does rubber have to be so resistant? This would be so much easier with the help from mothership.";
-            StartCoroutine(DisplayLine(response));
+            TryRobotSpeak(response);
         }
         if (io.UIimage.name.Contains("SolarPanelsTT_UI"))
         {
             response = "Can that star recharge my battery already?";
-            StartCoroutine(DisplayLine(response));
+            TryRobotSpeak(response);
         }
         if (io.UIimage.name.Contains("FasterAbility_UI"))
         {
             response = "Ooo this looks like one of our old functions to help us go faster.";
-            StartCoroutine(DisplayLine(response));
+            TryRobotSpeak(response);
         }
 
     }
@@ -68,27 +80,27 @@ public class RobotMessaging : MonoBehaviour
         {
             //print("in");
             response = "Wait I think this is the window from our dorm room.";
-            StartCoroutine(DisplayLine(response));
+            TryRobotSpeak(response);
         }
         if (go.name.Contains("Battery")) 
         {
             response = "I think this use to be one of my chores, I don't know if I want to return this actually.";
-            StartCoroutine(DisplayLine(response));
+            TryRobotSpeak(response);
         }
         if (go.name.Contains("InhalerT"))
         {
             response = "This looks like it activates something if I push the big button.";
-            StartCoroutine(DisplayLine(response));
+            TryRobotSpeak(response);
         }
         if (go.name.Contains("InhalerR"))
         {
             response = "I need another Robot to activate the transmitter.";
-            StartCoroutine(DisplayLine(response));
+            TryRobotSpeak(response);
         }
         if (go.name.Contains("Paper"))
         {
             response = "Hmm this seems familiar lets try adding it to this big stucture.";
-            StartCoroutine(DisplayLine(response));
+            TryRobotSpeak(response);
         }
 
     }
@@ -96,20 +108,13 @@ public class RobotMessaging : MonoBehaviour
 
     public void TowerRobotSpeak(string response)
     {
-        StopCoroutine("DisplayLine");
-        StartCoroutine(DisplayLine(response));
+        TryRobotSpeak(response);
     }
 
     public void MotherRobotSpeak(string response)
     {
-        StopCoroutine("DisplayLine");
-        StartCoroutine(DisplayLine(response));
+        TryRobotSpeak(response);
     }
 
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

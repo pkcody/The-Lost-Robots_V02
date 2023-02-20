@@ -52,20 +52,20 @@ public class RandomBiomeBasedSpawning : MonoBehaviour
         }
 
 
-        Object[] redBiome_Resources = Resources.LoadAll("RedResources", typeof(GameObject));
-        Object[] greenBiome_Resources = Resources.LoadAll("GreenResources", typeof(GameObject));
-        Object[] blueBiome_Resources = Resources.LoadAll("BlueResources", typeof(GameObject));
+        //Object[] redBiome_Resources = Resources.LoadAll("RedResources", typeof(GameObject));
+        //Object[] greenBiome_Resources = Resources.LoadAll("GreenResources", typeof(GameObject));
+        //Object[] blueBiome_Resources = Resources.LoadAll("BlueResources", typeof(GameObject));
 
-        Debug.Log(Application.dataPath + "data_path");
+        //Debug.Log(Application.dataPath + "data_path");
 
-        //Object[] redBiome_Resources = Resources.LoadAll("C:/Users/kcody/Desktop/TheLostRobotsBuild/RedResources", typeof(GameObject));
-        //Object[] greenBiome_Resources = Resources.LoadAll("C:/Users/kcody/Desktop/TheLostRobotsBuild/GreenResources", typeof(GameObject));
-        //Object[] blueBiome_Resources = Resources.LoadAll("C:/Users/kcody/Desktop/TheLostRobotsBuild/BlueResources", typeof(GameObject));
+        ////Object[] redBiome_Resources = Resources.LoadAll("C:/Users/kcody/Desktop/TheLostRobotsBuild/RedResources", typeof(GameObject));
+        ////Object[] greenBiome_Resources = Resources.LoadAll("C:/Users/kcody/Desktop/TheLostRobotsBuild/GreenResources", typeof(GameObject));
+        ////Object[] blueBiome_Resources = Resources.LoadAll("C:/Users/kcody/Desktop/TheLostRobotsBuild/BlueResources", typeof(GameObject));
 
 
-        Debug.Log(redBiome_Resources.Length + "FunkyMonkey");
-        Debug.Log(greenBiome_Resources.Length);
-        Debug.Log(blueBiome_Resources.Length);
+        //Debug.Log(redBiome_Resources.Length + "FunkyMonkey");
+        //Debug.Log(greenBiome_Resources.Length);
+        //Debug.Log(blueBiome_Resources.Length);
 
         //Instantiate("RedResources")
 
@@ -93,18 +93,18 @@ public class RandomBiomeBasedSpawning : MonoBehaviour
 
 
 
-        foreach (var go in redBiome_Resources)
-        {
-            redBiomePrefabs.Add(go as GameObject);
-        }
-        foreach (var go in greenBiome_Resources)
-        {
-            greenBiomePrefabs.Add(go as GameObject);
-        }
-        foreach (var go in blueBiome_Resources)
-        {
-            blueBiomePrefabs.Add(go as GameObject);
-        }
+        //foreach (var go in redBiome_Resources)
+        //{
+        //    redBiomePrefabs.Add(go as GameObject);
+        //}
+        //foreach (var go in greenBiome_Resources)
+        //{
+        //    greenBiomePrefabs.Add(go as GameObject);
+        //}
+        //foreach (var go in blueBiome_Resources)
+        //{
+        //    blueBiomePrefabs.Add(go as GameObject);
+        //}
     }
 
 
@@ -115,8 +115,8 @@ public class RandomBiomeBasedSpawning : MonoBehaviour
         int zMin = c.row * GridBreakdown.cellPixelSize - 495;
         int zMax = c.row * GridBreakdown.cellPixelSize - 405 - GridBreakdown.cellPixelSize;
 
-        //print($"xmin {xMin} xmax {xMax}");
-        //print($"zmin {zMin} zmax {zMax}");
+        //Debug.Log($"xmin {xMin} xmax {xMax}");
+        //Debug.Log($"zmin {zMin} zmax {zMax}");
         float randXinCell = Random.Range(xMin, xMax);
         float randZinCell = Random.Range(zMin, zMax);
 
@@ -139,10 +139,10 @@ public class RandomBiomeBasedSpawning : MonoBehaviour
         {
             Cell c = GridBreakdown.instance.Grid[(int)emptyCell.x, (int)emptyCell.y];
             doNotSpawnGOsInCells.Add(c);
-            print("" + c.row + c.col + c.biome);
+            Debug.Log("" + c.row + c.col + c.biome);
         }
 
-        print(doNotSpawnGOsInCells.Count + "ahhhhhh");
+        Debug.Log(doNotSpawnGOsInCells.Count + "ahhhhhh");
 
         SpawnMothership();
         RedBiomeSpawn();
@@ -160,7 +160,7 @@ public class RandomBiomeBasedSpawning : MonoBehaviour
             if (hit.distance > 1)
             {
                 Destroy(go);
-                print("Cleaned up");
+                Debug.Log("Cleaned up");
             }
         }
         foreach(GameObject go in greenBiomeSpawnedGOs)
@@ -169,7 +169,7 @@ public class RandomBiomeBasedSpawning : MonoBehaviour
             if (hit.distance > 1)
             {
                 Destroy(go);
-                print("Cleaned up");
+                Debug.Log("Cleaned up");
             }
         }
         foreach(GameObject go in blueBiomeSpawnedGOs)
@@ -178,7 +178,7 @@ public class RandomBiomeBasedSpawning : MonoBehaviour
             if (hit.distance > 1)
             {
                 Destroy(go);
-                print("Cleaned up");
+                Debug.Log("Cleaned up");
             }
         }
     }
@@ -195,7 +195,7 @@ public class RandomBiomeBasedSpawning : MonoBehaviour
 
     private void RedBiomeSpawn()
     {
-        print("RedBiomeSpawn");
+        Debug.Log("RedBiomeSpawn");
         redBiomeParent = GameObject.Find("RedBiomeParent").transform;
         foreach (Cell c in GridBreakdown.instance.redBiomeCells)
         {
@@ -203,7 +203,7 @@ public class RandomBiomeBasedSpawning : MonoBehaviour
             {
                 if (c.row != v.x || c.col != v.y)
                 {
-                    print($"red {c.row} {c.col}");
+                    Debug.Log($"red {c.row} {c.col}");
                     List<GameObject> redBiomeGOsInCell = new List<GameObject>();
                     for (int i = 0; i < Random.Range(redBiomeSpawnMinAmount, redBiomeSpawnMaxAmount); i++)
                     {
@@ -238,7 +238,7 @@ public class RandomBiomeBasedSpawning : MonoBehaviour
                                     }
 
                                 }
-                                print("Unable to spawn Red");
+                                Debug.Log("Unable to spawn Red");
                                 break;
                             }
                         }
@@ -246,7 +246,7 @@ public class RandomBiomeBasedSpawning : MonoBehaviour
                 }
                 else
                 {
-                    //print($"Cannot spawn in {c.row} {c.col}");
+                    //Debug.Log($"Cannot spawn in {c.row} {c.col}");
                 }
             }
         }
@@ -259,7 +259,7 @@ public class RandomBiomeBasedSpawning : MonoBehaviour
 
     private void GreenBiomeSpawn()
     {
-        print("GreenBiomeSpawn");
+        Debug.Log("GreenBiomeSpawn");
         greenBiomeParent = GameObject.Find("GreenBiomeParent").transform;
         foreach (Cell c in GridBreakdown.instance.greenBiomeCells)
         {
@@ -267,7 +267,7 @@ public class RandomBiomeBasedSpawning : MonoBehaviour
             {
                 if(c.row != v.x || c.col != v.y)
                 {
-                    print($"green {c.row} {c.col}");
+                    Debug.Log($"green {c.row} {c.col}");
                     List<GameObject> greenBiomeGOsInCell = new List<GameObject>();
                     for (int i = 0; i < Random.Range(greenBiomeSpawnMinAmount, greenBiomeSpawnMaxAmount); i++)
                     {
@@ -301,7 +301,7 @@ public class RandomBiomeBasedSpawning : MonoBehaviour
                                         break;
                                     }
                                 }
-                                print("Unable to spawn Green");
+                                Debug.Log("Unable to spawn Green");
                                 break;
                             }
                         }
@@ -309,7 +309,7 @@ public class RandomBiomeBasedSpawning : MonoBehaviour
                 }
                 else
                 {
-                    //print($"Cannot spawn in {c.row} {c.col}");
+                    //Debug.Log($"Cannot spawn in {c.row} {c.col}");
                 }
                 
             }
@@ -324,7 +324,7 @@ public class RandomBiomeBasedSpawning : MonoBehaviour
 
     private void BlueBiomeSpawn()
     {
-        print("BlueBiomeSpawn");
+        Debug.Log("BlueBiomeSpawn");
         blueBiomeParent = GameObject.Find("BlueBiomeParent").transform;
         foreach (Cell c in GridBreakdown.instance.blueBiomeCells)
         {
@@ -332,7 +332,7 @@ public class RandomBiomeBasedSpawning : MonoBehaviour
             {
                 if (c.row != v.x || c.col != v.y)
                 {
-                    print($"blue {c.row} {c.col}");
+                    Debug.Log($"blue {c.row} {c.col}");
                     List<GameObject> blueBiomeGOsInCell = new List<GameObject>();
                     for (int i = 0; i < Random.Range(blueBiomeSpawnMinAmount, blueBiomeSpawnMaxAmount); i++)
                     {
@@ -366,7 +366,7 @@ public class RandomBiomeBasedSpawning : MonoBehaviour
                                         break;
                                     }
                                 }
-                                print("Unable to spawn Blue");
+                                Debug.Log("Unable to spawn Blue");
                                 break;
                             }
                         }
@@ -374,7 +374,7 @@ public class RandomBiomeBasedSpawning : MonoBehaviour
                 }
                 else
                 {
-                    //print($"Cannot spawn in {c.row} {c.col}");
+                    //Debug.Log($"Cannot spawn in {c.row} {c.col}");
                 }
             }
         }

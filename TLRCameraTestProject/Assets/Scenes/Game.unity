@@ -6480,6 +6480,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2603342964491090388, guid: 53ae65b66c5d1954c9bd1dbbec14e26b, type: 3}
   m_PrefabInstance: {fileID: 534364297}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &543445832 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7297900189676690971, guid: ce8d2c0f6ee69504d8f9555706cae30b, type: 3}
+  m_PrefabInstance: {fileID: 1972318966}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &547362718
 GameObject:
   m_ObjectHideFlags: 0
@@ -9220,6 +9225,7 @@ GameObject:
   - component: {fileID: 791970818}
   - component: {fileID: 791970820}
   - component: {fileID: 791970819}
+  - component: {fileID: 791970821}
   m_Layer: 5
   m_Name: MinimapBG
   m_TagString: Untagged
@@ -9282,6 +9288,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 791970817}
   m_CullTransparentMesh: 1
+--- !u!114 &791970821
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 791970817}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28e10578816410e479f8654651fe8d16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  smoothMap: {fileID: 791970819}
 --- !u!1 &792020387
 GameObject:
   m_ObjectHideFlags: 0
@@ -26864,7 +26883,7 @@ PrefabInstance:
     - target: {fileID: 8271566303102477243, guid: 3dadfce22e358a0409da29533347d6e0, type: 3}
       propertyPath: target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 543445832}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3dadfce22e358a0409da29533347d6e0, type: 3}
 --- !u!1 &2064772461
@@ -29375,21 +29394,46 @@ MonoBehaviour:
   doNotSpawnInCells:
   - {x: 7, y: 7}
   motherShip: {fileID: 1936938411626230138}
-  redBiomePrefabs: []
+  redBiomePrefabs:
+  - {fileID: 2259471934167842379, guid: 779dee57f1a11804083cddde411721c6, type: 3}
+  - {fileID: 2267935577093698092, guid: a6858a51522b11e46a328ac40cdbdde2, type: 3}
+  - {fileID: 4928841070417408515, guid: ac4c7ad072c6c3642897caef15553fe2, type: 3}
+  - {fileID: 5137105240540515870, guid: e87c4c9d9caf7024fb31751f156a23e6, type: 3}
+  - {fileID: 7951245919020047514, guid: 527d563c19c941941b9f7d0786a778e9, type: 3}
+  - {fileID: 8216063993086535598, guid: 0135e0d88b29afe4b96d0a6f3ad4a0b0, type: 3}
+  - {fileID: 2765432539630099072, guid: d7148aaa77c672448bbe205d3966f3a2, type: 3}
   redBiomeParent: {fileID: 7864114486864649322}
   redBiomeSpawnMinAmount: 4
   redBiomeSpawnMaxAmount: 8
   redBiomeMinDistanceBetweenSpawns: 20
   redBiomeAttemptsToSpawnNotNearAnotherSpawn: 5
   redBiomeSpawnedGOs: []
-  greenBiomePrefabs: []
+  greenBiomePrefabs:
+  - {fileID: 2850221472506696489, guid: 50a00284c86707b4f8e6d079797f702e, type: 3}
+  - {fileID: 4235662867303989042, guid: 5ecf155f0b96a484db12cc57e0900bfc, type: 3}
+  - {fileID: 4992788538193210464, guid: a663899ce364e714fac1d9e4b250a013, type: 3}
+  - {fileID: 3860262374909012098, guid: 87831ae7f1901c741bb059208fbd5d21, type: 3}
+  - {fileID: 4821216747598224122, guid: 77f04d438265fa34e97a81e9e32f0b41, type: 3}
+  - {fileID: 859747342165163320, guid: 3067d037e672a3b438438c016afff523, type: 3}
   greenBiomeParent: {fileID: 7864114485979664792}
   greenBiomeSpawnMinAmount: 4
   greenBiomeSpawnMaxAmount: 8
   greenBiomeMinDistanceBetweenSpawns: 20
   greenBiomeAttemptsToSpawnNotNearAnotherSpawn: 5
   greenBiomeSpawnedGOs: []
-  blueBiomePrefabs: []
+  blueBiomePrefabs:
+  - {fileID: 7588036493613392691, guid: f5870012ad20e7743b6732afe10c8e6c, type: 3}
+  - {fileID: 5798238723504226524, guid: bbc22c6ef9454674aae49eb6be3710b8, type: 3}
+  - {fileID: 5798238723504226524, guid: 57e274f90db804243b6cef8dc857a36e, type: 3}
+  - {fileID: 5798238723504226524, guid: ca4f455653f65ee439d1d7765b756ff6, type: 3}
+  - {fileID: 5798238723504226524, guid: 89f4ba4b5d0a36c41be25c894f5bac20, type: 3}
+  - {fileID: 5798238723504226524, guid: 6ec3db2703cf2b5438a4b994a30edc36, type: 3}
+  - {fileID: 1490909819878958116, guid: c3acd9b667db57e4992637cf5e4acbc1, type: 3}
+  - {fileID: 6681553712069813822, guid: 1e8917d5649f0354888a3ff8c0ca2585, type: 3}
+  - {fileID: 836037631708683831, guid: 8a38358fbc9a9fb4490649f517691309, type: 3}
+  - {fileID: 5693889623811126824, guid: dc48fb9687548934e88fff1eac909bf1, type: 3}
+  - {fileID: 7368236404774834076, guid: 3f12210210b819a43aa0cce91395f087, type: 3}
+  - {fileID: 3036433487252377925, guid: 57ea3bf25939373498672fd733a1429d, type: 3}
   blueBiomeParent: {fileID: 7864114487221405738}
   blueBiomeSpawnMinAmount: 7
   blueBiomeSpawnMaxAmount: 9

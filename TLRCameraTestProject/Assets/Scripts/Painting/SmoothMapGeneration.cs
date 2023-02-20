@@ -79,7 +79,9 @@ public class SmoothMapGeneration : MonoBehaviour
         else
         {
             //for executable
-            fileData = System.IO.File.ReadAllBytes(Application.streamingAssetsPath + "/coloredPng.png");
+            //fileData = System.IO.File.ReadAllBytes(Application.streamingAssetsPath + "/coloredPng.png");
+            string filepath = Application.dataPath.Substring(0, Application.dataPath.Length - 23);
+            fileData = System.IO.File.ReadAllBytes(filepath + "/coloredPng.png");
         }
 
         tex = new Texture2D(mapResolution, mapResolution);
@@ -131,7 +133,20 @@ public class SmoothMapGeneration : MonoBehaviour
 
         biomeMap.Apply();
         terData.terrainLayers[0].diffuseTexture = biomeMap;
-        System.IO.File.WriteAllBytes("Assets\\SmoothMapGeneration.png", biomeMap.EncodeToPNG());
+        
+        
+
+        if (Application.isEditor)
+        {
+            System.IO.File.WriteAllBytes("Assets\\SmoothMapGeneration.png", biomeMap.EncodeToPNG());
+        }
+        else
+        {
+            string filepath = Application.dataPath.Substring(0, Application.dataPath.Length - 23);
+            System.IO.File.WriteAllBytes(filepath + "/SmoothMapGeneration.png", biomeMap.EncodeToPNG());
+            //System.IO.File.WriteAllBytes(Application.streamingAssetsPath + "/SmoothMapGeneration.png", biomeMap.EncodeToPNG());
+
+        }
         GridBreakdown.instance.SetCellsBiome();
     }
 }
