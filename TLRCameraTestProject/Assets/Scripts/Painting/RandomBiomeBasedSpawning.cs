@@ -51,12 +51,47 @@ public class RandomBiomeBasedSpawning : MonoBehaviour
             Destroy(gameObject);
         }
 
-        
-       
 
         Object[] redBiome_Resources = Resources.LoadAll("RedResources", typeof(GameObject));
         Object[] greenBiome_Resources = Resources.LoadAll("GreenResources", typeof(GameObject));
         Object[] blueBiome_Resources = Resources.LoadAll("BlueResources", typeof(GameObject));
+
+        Debug.Log(Application.dataPath + "data_path");
+
+        //Object[] redBiome_Resources = Resources.LoadAll("C:/Users/kcody/Desktop/TheLostRobotsBuild/RedResources", typeof(GameObject));
+        //Object[] greenBiome_Resources = Resources.LoadAll("C:/Users/kcody/Desktop/TheLostRobotsBuild/GreenResources", typeof(GameObject));
+        //Object[] blueBiome_Resources = Resources.LoadAll("C:/Users/kcody/Desktop/TheLostRobotsBuild/BlueResources", typeof(GameObject));
+
+
+        Debug.Log(redBiome_Resources.Length + "FunkyMonkey");
+        Debug.Log(greenBiome_Resources.Length);
+        Debug.Log(blueBiome_Resources.Length);
+
+        //Instantiate("RedResources")
+
+        //Object[] redBiome_Resources;
+        //Object[] greenBiome_Resources;
+        //Object[] blueBiome_Resources;
+
+        //if (Application.isEditor)
+        //{
+        //    redBiome_Resources = Resources.LoadAll("RedResources", typeof(GameObject));
+        //    greenBiome_Resources = Resources.LoadAll("GreenResources", typeof(GameObject));
+        //    blueBiome_Resources = Resources.LoadAll("BlueResources", typeof(GameObject));
+        //}
+        //else
+        //{
+        //    //Application.persistentDataPath
+        //    redBiome_Resources = Application.dataPath("/RedResources", typeof(GameObject));
+        //    greenBiome_Resources = Resources.LoadAll(Application.streamingAssetsPath + "/GreenResources", typeof(GameObject));
+        //    blueBiome_Resources = Resources.LoadAll(Application.streamingAssetsPath + "/BlueResources", typeof(GameObject));
+
+        //    //redBiome_Resources = System
+        //    //greenBiome_Resources = Resources.LoadAll("GreenResources", typeof(GameObject));
+        //    //blueBiome_Resources = Resources.LoadAll("BlueResources", typeof(GameObject));
+        //}
+
+
 
         foreach (var go in redBiome_Resources)
         {
