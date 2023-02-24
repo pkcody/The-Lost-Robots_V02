@@ -14,6 +14,13 @@ public class TowerSoundEffect : MonoBehaviour
     public bool firstTime2 = false;
     public bool firstTime3 = false;
 
+    public GameObject poofCreate;
+
+    private void Start()
+    {
+        poofCreate.SetActive(true);
+    }
+
 
     private void OnTriggerEnter(Collider cc)
     {

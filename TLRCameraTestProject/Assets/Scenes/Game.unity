@@ -10360,7 +10360,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -309, y: -139.73}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 153.52, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &883651032
 MonoBehaviour:
@@ -10382,9 +10382,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 19bb71756a8f2224f9d99cd85310d531, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d92d783ec826bf6488ccb98161a8d0a5, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -14444,6 +14444,7 @@ GameObject:
   - component: {fileID: 1225167034}
   - component: {fileID: 1225167037}
   - component: {fileID: 1225167038}
+  - component: {fileID: 1225167039}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -14569,6 +14570,66 @@ MonoBehaviour:
   allPlayerPos: []
   middle: 20
   averageAllPlayerDist: 0
+--- !u!114 &1225167039
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1225167033}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 948f4100a11a5c24981795d21301da5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  volumeTrigger: {fileID: 8780889755778457543}
+  volumeLayer:
+    serializedVersion: 2
+    m_Bits: 65536
+  stopNaNPropagation: 1
+  finalBlitToCameraTarget: 0
+  antialiasingMode: 0
+  temporalAntialiasing:
+    jitterSpread: 0.75
+    sharpness: 0.25
+    stationaryBlending: 0.95
+    motionBlending: 0.85
+  subpixelMorphologicalAntialiasing:
+    quality: 2
+  fastApproximateAntialiasing:
+    fastMode: 0
+    keepAlpha: 0
+  fog:
+    enabled: 1
+    excludeSkybox: 1
+  debugLayer:
+    lightMeter:
+      width: 512
+      height: 256
+      showCurves: 1
+    histogram:
+      width: 512
+      height: 256
+      channel: 3
+    waveform:
+      exposure: 0.12
+      height: 256
+    vectorscope:
+      size: 256
+      exposure: 0.12
+    overlaySettings:
+      linearDepth: 0
+      motionColorIntensity: 4
+      motionGridSize: 64
+      colorBlindnessType: 0
+      colorBlindnessStrength: 1
+  m_Resources: {fileID: 11400000, guid: d82512f9c8e5d4a4d938b575d47f88d4, type: 2}
+  m_ShowToolkit: 0
+  m_ShowCustomSorter: 0
+  breakBeforeColorGrading: 0
+  m_BeforeTransparentBundles: []
+  m_BeforeStackBundles: []
+  m_AfterStackBundles: []
 --- !u!1 &1225496310
 GameObject:
   m_ObjectHideFlags: 0
@@ -21667,7 +21728,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 309, y: -139.73}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 155.3, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1703788425
 MonoBehaviour:
@@ -21689,9 +21750,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 6eededf7939ae9f419d6e14611579f31, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 51e0de209fd28b24d9cb3f62485aa717, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -29235,6 +29296,7 @@ MonoBehaviour:
   - {fileID: 7951245919020047514, guid: 527d563c19c941941b9f7d0786a778e9, type: 3}
   - {fileID: 8216063993086535598, guid: 0135e0d88b29afe4b96d0a6f3ad4a0b0, type: 3}
   - {fileID: 2765432539630099072, guid: d7148aaa77c672448bbe205d3966f3a2, type: 3}
+  - {fileID: 5962029802089437284, guid: 7d632ff8e43050b4598e09f401e360d5, type: 3}
   redBiomeParent: {fileID: 7864114486864649322}
   redBiomeSpawnMinAmount: 4
   redBiomeSpawnMaxAmount: 8
@@ -29267,6 +29329,9 @@ MonoBehaviour:
   - {fileID: 5693889623811126824, guid: dc48fb9687548934e88fff1eac909bf1, type: 3}
   - {fileID: 7368236404774834076, guid: 3f12210210b819a43aa0cce91395f087, type: 3}
   - {fileID: 3036433487252377925, guid: 57ea3bf25939373498672fd733a1429d, type: 3}
+  - {fileID: 6520805739829784200, guid: c89a76d9874b25a4fb5397ba8175ef56, type: 3}
+  - {fileID: 240099471077878177, guid: dc9e999485c7508439a4e747c0e83c31, type: 3}
+  - {fileID: 7525994118260770721, guid: 1cbc309e6a0c3344aa39ccb5064bf20f, type: 3}
   blueBiomeParent: {fileID: 7864114487221405738}
   blueBiomeSpawnMinAmount: 7
   blueBiomeSpawnMaxAmount: 9
@@ -29391,6 +29456,55 @@ Transform:
   m_Children: []
   m_Father: {fileID: 796973420043045483}
   m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8780889755778457536
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8780889755778457537}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b9a305e18de0c04dbd257a21cd47087, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sharedProfile: {fileID: 11400000, guid: 39c323429131ebd42b579562a16f9e01, type: 2}
+  isGlobal: 1
+  blendDistance: 0
+  weight: 1
+  priority: 0
+--- !u!1 &8780889755778457537
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8780889755778457543}
+  - component: {fileID: 8780889755778457536}
+  m_Layer: 16
+  m_Name: POSTfx
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8780889755778457543
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8780889755778457537}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -19.173447, y: 9.357874, z: 30.255539}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 34
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8985460374568246388
 GameObject:

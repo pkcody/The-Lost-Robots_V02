@@ -265,6 +265,8 @@ public class DisplayingInventory : MonoBehaviour
         GameObject droppedItem = Instantiate(itemToRemove.prefab, spawnPos, Quaternion.identity, GameObject.FindGameObjectWithTag("PickupParent").transform);
         droppedItem.GetComponent<BoxCollider>().enabled = false;
 
+        
+
         yield return new WaitForSeconds(3);
 
         droppedItem.GetComponent<BoxCollider>().enabled = true;

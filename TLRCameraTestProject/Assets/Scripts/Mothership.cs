@@ -22,9 +22,14 @@ public class Mothership : MonoBehaviour
     public bool canBoardShip = false;
     public int robBoardedNum = 0;
 
+    //particles
+    public GameObject locationIcon;
+
     private void Start()
     {
         h20Slider.gameObject.SetActive(false);
+        locationIcon.SetActive(false);
+
     }
     public void TryMotherShipEnd()
     {
@@ -139,5 +144,10 @@ public class Mothership : MonoBehaviour
     private void Update()
     {
         gameObject.transform.GetChild(0).gameObject.SetActive(true);
+
+        if (tower1 && tower2 && tower3)
+        {
+            locationIcon.SetActive(true);
+        }
     }
 }

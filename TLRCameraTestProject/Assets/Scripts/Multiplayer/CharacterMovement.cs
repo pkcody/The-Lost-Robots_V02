@@ -109,7 +109,9 @@ public class CharacterMovement : MonoBehaviour
     [Header("Animation")]
     public Animator animator;
 
-
+    //Particles
+    [Header("Particles")]
+    public GameObject walkParticle;
 
     private void Awake()
     {
@@ -678,7 +680,9 @@ public class CharacterMovement : MonoBehaviour
                 lastLook = new Vector3(movementInput.x, 0, movementInput.y);
 
                 animator.SetBool("isRun", true);
-                
+                walkParticle.SetActive(true);
+
+
             }
 
             body.transform.forward = lastLook;
@@ -687,6 +691,8 @@ public class CharacterMovement : MonoBehaviour
         
         else
         {
+            walkParticle.SetActive(false);
+
             animator.SetBool("isRun", false);
 
         }

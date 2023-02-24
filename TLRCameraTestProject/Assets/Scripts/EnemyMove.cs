@@ -24,7 +24,7 @@ public class EnemyMove : MonoBehaviour
 
     public GameObject mobDrop;
 
-
+    public GameObject deathParticle;
 
     public int EnemyLives
     {
@@ -90,13 +90,14 @@ public class EnemyMove : MonoBehaviour
     {
         animator.SetTrigger("death");
         DropItem();
+        deathParticle.gameObject.SetActive(true);
         Invoke("DestroyEnemy", 3f);
     }
 
     void DestroyEnemy()
     {
         Destroy(transform.parent.gameObject);
-
+        
     }
 
     void DropItem()
